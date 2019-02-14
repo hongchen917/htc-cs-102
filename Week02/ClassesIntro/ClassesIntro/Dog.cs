@@ -9,6 +9,18 @@ namespace ClassesIntro
 {
     public class Dog
     {
+        public string breed;
+        public int height;
+        public string name;
 
+        public void bark() {
+            MessageBox.Show("bark!");
+        }
+
+        public void sayname()
+        {
+          
+            MessageBox.Show(name);
+        }
     }
 }
