@@ -13,6 +13,13 @@ namespace ClassesIntro
         public int height;
         public string name;
 
+        public Dog(string breed,  int height, string name)
+        {
+            this.breed = breed;
+            this.height = height;
+            this.name = name;
+        }
+
         public void bark() {
             MessageBox.Show("bark!");
         }
