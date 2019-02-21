@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="525">
     <StackPanel Margin="10,10,10,10">
+        <TextBlock x:Name="textBlocktitle" HorizontalAlignment="Left" Height="30" Margin="53,0,0,0" TextWrapping="Wrap" Text="Title" Width="104"/>
+        <TextBox x:Name="textBoxtitle" HorizontalAlignment="Left" Height="37" Margin="18,0,0,0" TextWrapping="Wrap" Text="" Width="422"/>
+        <TextBlock x:Name="textBlockrelease" HorizontalAlignment="Left" Height="30" Margin="53,0,0,0" TextWrapping="Wrap" Text="Release" Width="104"/>
+        <TextBox x:Name="textBoxrelease" HorizontalAlignment="Left" Height="37" Margin="18,0,0,0" TextWrapping="Wrap" Text="" Width="422"/>
+        <Button x:Name="buttonadd" Content="Add" HorizontalAlignment="Left" Height="39" Width="497" Click="buttonadd_Click" />
+        <Button x:Name="buttonshow" Content="Show all" HorizontalAlignment="Left" Height="48" Width="497" Click="buttonshow_Click"/>
 
     </StackPanel>
 </Window>
