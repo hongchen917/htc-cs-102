@@ -28,16 +28,35 @@ namespace MovieList
             InitializeComponent();
 
             movielist = new List<Movie>();
+
         }
 
         private void buttonadd_Click(object sender, RoutedEventArgs e)
         {
-
+            //get value from textbox
+            string name = textBoxtitle.Text;
+            int year = Convert.ToInt32(textBoxrelease.Text);
+            //add movie to movie list
+            Movie newmovie = new Movie(name, year);
+            movielist.Add(newmovie);
+            //clear text box
+            textBoxtitle.Text = "";
+            textBoxrelease.Text = "";
         }
 
         private void buttonshow_Click(object sender, RoutedEventArgs e)
         {
+            foreach (Movie movie in movielist)
+            {
+                movie.Show_movie();
+            }
+            
+            
+        }
 
+        private void buttonremove_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
