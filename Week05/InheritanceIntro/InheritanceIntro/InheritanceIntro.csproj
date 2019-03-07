@@ -58,11 +58,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Animals.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Organism.cs" />
     <Compile Include="Dog.cs" />
+    <Compile Include="Duck.cs" />
+    <Compile Include="Frog.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="dog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="duck.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="origin.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
