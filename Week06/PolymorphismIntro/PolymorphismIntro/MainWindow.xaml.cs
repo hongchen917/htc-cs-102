@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,26 @@ namespace PolymorphismIntro
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Animal> Animals;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Animals = new ObservableCollection<Animal>();
+
+            // define some animals
+            Frog frog = new Frog(4, "Kermit", false, 2.33);
+            Dog dog = new Dog("Muppet", 20, "Rolf", 4.5);
+            Duck duck = new Duck(9, "Donald",5.3);
+            Cat cat = new Cat("Siamese", 15, "Clorie", 2.5);
+
+            Animals.Add(frog);
+            Animals.Add(duck);
+            Animals.Add(dog);
+            Animals.Add(cat);
+
+            lvAnimals.ItemsSource = Animals;
         }
 
         private void Bark_Button_Click(object sender, RoutedEventArgs e)
@@ -45,29 +63,23 @@ namespace PolymorphismIntro
 
         private void SayName_Button_Click(object sender, RoutedEventArgs e)
         {
-            // Define a new List of dogs
-            List<Dog> dogs = new List<Dog>();
-            
-            // Instantiate some dog objects
-            Dog dog1 = new Dog("Muppet", 20, "Rolf");
-            Dog dog2 = new Dog("Golden Retriever", 30, "Air Bud");
-
-            // Add the dogs to the list
-            dogs.Add(dog1);
-            dogs.Add(dog2);
-
-            // Loop through the list and call a method on the objects
-            foreach (Dog d in dogs)
+            // loop the list in animals call name
+            foreach (Animal a in Animals)
             {
-                d.SayName();
+                a.SayName();
             }
+        }
 
-            // Ducks and Frogs
-            Duck duck1 = new Duck(9, "Donald");
-            duck1.SayName();
-
-            Frog frog1 = new Frog(4, "Kermit", false);
-            frog1.SayName();
+        private void lvAnimals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (object selectedItem in lvAnimals.SelectedItems)
+            {
+                Animal selectedAnimal = selectedItem as Animal;
+                if (selectedAnimal != null)
+                {
+                    selectedAnimal.Speak();
+                }
+            }
         }
     }
 }

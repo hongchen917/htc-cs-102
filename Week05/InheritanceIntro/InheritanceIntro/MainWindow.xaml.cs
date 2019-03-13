@@ -61,6 +61,7 @@ namespace InheritanceIntro
 
         private void Quack_Button_Click(object sender, RoutedEventArgs e)
         {
+            
             Duck duck = new Duck();
             duck.Quack(); 
         }

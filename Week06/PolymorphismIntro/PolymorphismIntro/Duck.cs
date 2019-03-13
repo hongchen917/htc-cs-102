@@ -9,6 +9,10 @@ namespace PolymorphismIntro
 {
     public class Duck : Animal
     {
+        public override void Speak()
+        {
+            Quack();
+        }
         public void Quack()
         {
             MessageBox.Show("Quack");
@@ -16,10 +20,11 @@ namespace PolymorphismIntro
 
         public Duck() { }
 
-        public Duck(int height, string name)
+        public Duck(int height, string name, double weight)
         {
-            this.Height = height;
-            this.Name = name;
+            Height = height;
+            Name = name;
+            Weight = weight;
         }
     }
 }
