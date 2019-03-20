@@ -12,6 +12,8 @@
                 <GridView>
                     <GridViewColumn Width="150" Header="Title" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
                     <GridViewColumn Width="100" Header="Release Year" DisplayMemberBinding="{Binding ReleaseYear}"></GridViewColumn>
+                    <GridViewColumn Width="150" Header="Animation Studio" DisplayMemberBinding="{Binding AnimationStudio}"></GridViewColumn>
+                    <GridViewColumn Width="100" Header="Animation type" DisplayMemberBinding="{Binding AnimationType}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -20,12 +22,17 @@
         <TextBlock>Release Year</TextBlock>
         <TextBox Name="releaseYearInput" Margin="0,0,0,15"></TextBox>
         <Button Click="AddButton_Click" HorizontalAlignment="Center" Margin="0,0,0,10">Add</Button>
-        
+
         <!-- Border surrounding Animated Movie options -->
         <Border BorderThickness="1" BorderBrush="Gray" Padding="8">
             <StackPanel>
                 <!-- Put Animated Movie options in here -->
-                
+                <TextBlock>Animation Studio</TextBlock>
+                <TextBox Name="studio_input" Margin="0,0,0,15"></TextBox>
+                <TextBlock>Animation Type</TextBlock>
+                <TextBox Name="type_input" Margin="0,0,0,15"></TextBox>
+                <Button HorizontalAlignment="Center" Margin="0,0,0,10" Click="AddAnimatedMovieButton_Click">Add Animated Movie</Button>
+
             </StackPanel>
         </Border>
     </StackPanel>

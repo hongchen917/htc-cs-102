@@ -33,7 +33,7 @@ namespace MovieList
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Movie movieToAdd = new Movie(titleInput.Text, int.Parse(releaseYearInput.Text));
+            Movie movieToAdd = new Movie(titleInput.Text, Convert.ToInt32(releaseYearInput.Text));
 
             MovieList.Add(movieToAdd);
 
@@ -56,6 +56,17 @@ namespace MovieList
             {
                 selectedMovie.ShowDetails();
             }
+        }
+
+        private void AddAnimatedMovieButton_Click(object sender, RoutedEventArgs e)
+        {
+            AnimatedMovie animated = new AnimatedMovie(titleInput.Text, Convert.ToInt32(releaseYearInput.Text), studio_input.Text, type_input.Text);
+            MovieList.Add(animated);
+            //clear text box
+            titleInput.Clear();
+            releaseYearInput.Clear();
+            studio_input.Clear();
+            type_input.Clear();
         }
     }
 }
